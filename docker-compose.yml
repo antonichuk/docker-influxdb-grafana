@@ -2,7 +2,7 @@ influxdb:
   image: influxdb:latest
   container_name: influxdb
   ports:
-    - "8083:8083"
+    #- "8083:8083"
     - "8086:8086"
     - "8090:8090"
   env_file:
@@ -10,7 +10,7 @@ influxdb:
   volumes:
     # Data persistency
     # sudo mkdir -p /srv/docker/influxdb/data
-    - /srv/docker/influxdb/data:/var/lib/influxdb
+    - /Data/docker/influxdb/data:/var/lib/influxdb
 
 telegraf:
   image: telegraf:latest
@@ -33,4 +33,4 @@ grafana:
   volumes:
     # Data persistency
     # sudo mkdir -p /srv/docker/grafana/data; chown 472:472 /srv/docker/grafana/data
-    - /srv/docker/grafana/data:/var/lib/grafana
+    - /Data/docker/grafana/data:/var/lib/grafana
